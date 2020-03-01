@@ -1,13 +1,13 @@
 [package]
 name = "urlex"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Wang Ruochen <wangkevin920@163.com>"]
 edition = "2018"
 description = "Extract URL from stdin and print them to stdout"
 readme = "README.md"
 license = "MIT"
 repository = "https://github.com/weirane/urlex"
-categories = ["command-line-utilities", "url", "url-extract"]
+categories = ["command-line-utilities"]
 exclude = ["/scripts/**"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html

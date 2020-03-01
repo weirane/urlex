@@ -2,7 +2,7 @@ use regex::Regex;
 use std::io::stdin;
 use urlex::urlex;
 
-const URL_REGEX: &str = "(((http|https|ftp|gopher)|mailto):(//)?[^ <>\"\t]*|(www|ftp)[0-9]?\\.[-a-z0-9.]+)[^ .,;\t\n\r<\">\\):]?[^, <>\"\t]*[^ .,;\t\n\r<\">\\):]";
+const URL_REGEX: &str = r#"((https?|ftp)://[^ <>"\t]*|(www|ftp)[0-9]?\.[-a-z0-9.]+)[^ .,;\t\n\r<">\):]?[^, <>"\t]*[^ .,;\t\n\r<">\):]"#;
 
 fn main() -> anyhow::Result<()> {
     let stdin = stdin();

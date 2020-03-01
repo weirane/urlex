@@ -1,6 +1,7 @@
 use regex::Regex;
 use std::io::{self, BufRead};
 
+/// Extracts a pattern specified by `regex` from `input`.
 pub fn urlex(mut input: impl BufRead, regex: Regex) -> io::Result<Vec<String>> {
     let mut buf = String::new();
     let mut ret = Vec::new();

@@ -11,11 +11,11 @@ pub fn urlex(mut input: impl BufRead, regex: Regex) -> io::Result<Vec<String>> {
         if input.read_line(&mut buf)? == 0 {
             break;
         }
-        let buf = buf.trim_end();
-        for m in regex.find_iter(&buf) {
-            let s = m.as_str();
-            ret.push(s.to_string());
-        }
+        ret.extend(
+            regex
+                .find_iter(buf.trim_end())
+                .map(|m| m.as_str().to_string()),
+        );
     }
     Ok(ret)
 }
